@@ -41,6 +41,16 @@ if livenessDetector.currentStep == 6 {
 }
 ```
 
+Also, you can check wheter these steps are checked or not with the boolen values; 
+- `isFaceDetected`
+- `isBlinkDetected`
+- `isRotateLeftDetected = false`
+- `isRotateRightDetected`
+- `isSmileDetected`
+
+*All these values are default false.*
+
+
 ## Notes
 - In the frames, if any face is recognized, currentStep will be 1.
 - In the frames, if there are more than one face, currentStep will be 1.
