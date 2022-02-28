@@ -44,7 +44,7 @@ if livenessDetector.currentStep == 6 {
 Also, you can check wheter these steps are checked or not with the boolen values; 
 - `isFaceDetected`
 - `isBlinkDetected`
-- `isRotateLeftDetected = false`
+- `isRotateLeftDetected`
 - `isRotateRightDetected`
 - `isSmileDetected`
 
