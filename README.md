@@ -33,7 +33,12 @@ Then you need to call detectFace function and feed it with the video captured `U
 livenessDetector.detectFace(UIImage)
 ```
 
-The full active liveness check will finish when `livenessDetector.currentStep` is equals to six and that means it is successful.
+The full active liveness check will finish when `livenessDetector.currentStep` is equals to six and that means it is successful. For instance; 
+
+```swift 
+if livenessDetector.currentStep == 6 {
+print("Active liveness check completed successfully")
+```
 
 
 We are working on to develop with more optional usage. For now, you can control all the steps that are given above.
