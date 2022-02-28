@@ -42,7 +42,7 @@ if livenessDetector.currentStep == 6 {
 ```
 
 ## Notes
-- In the frames, if any face is recognized in te middle of the steps, currentStep will be 1.
+- In the frames, if any face is recognized, currentStep will be 1.
 - In the frames, if there are more than one face, currentStep will be 1.
 - We are working on to develop with more optional usage. For now, you can control all the steps that are given above.
 
