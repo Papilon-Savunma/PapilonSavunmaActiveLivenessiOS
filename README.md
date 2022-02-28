@@ -37,7 +37,8 @@ The full active liveness check will finish when `livenessDetector.currentStep` i
 
 ```swift 
 if livenessDetector.currentStep == 6 {
-print("Active liveness check completed successfully")
+  print("Active liveness check completed successfully")
+}
 ```
 
 
