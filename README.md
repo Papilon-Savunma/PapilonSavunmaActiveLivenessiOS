@@ -22,10 +22,16 @@ This SDK has five steps to control liveness. These steps are;
 4. Looking Right Check
 5. Smiling Detection
 
-Simply create an object with class `LivenessDetection`, with initializer `currentStepInit`. This currentStep should be 1 at the start. As the current step changes the steps that are given above are completing. 
+Simply create an object with class `LivenessDetection`, with initializer `detectionOptionsInit`. There are four options;
+- `HeadRot`: Only left-right head rotation movement check
+- `Blink_HeadRot`: Eye blink and left-right head rotation movement check
+- `HeadRot_Smile`: Left-right head rotation movement and smiling check
+- `FullPack`: Eye blink, left-right head rotation movement and smiling check
+
+For instance;
 
 ```swift
-let livenessDetector = LivenessDetection(currentStepInit: 1)
+let livenessDetector = LivenessDetection(detectionOptionsInıt: .FullPack)
 ```
 
 Then you need to call detectFace function and feed it with the video captured `UIImage`
@@ -33,10 +39,10 @@ Then you need to call detectFace function and feed it with the video captured `U
 livenessDetector.detectFace(UIImage)
 ```
 
-The full active liveness check will finish when `livenessDetector.currentStep` is equals to six and that means it is successful. For instance; 
+The full active liveness check will finish when `livenessDetector.livenessSuccess` is `true` and that means it is successful. For instance; 
 
 ```swift 
-if livenessDetector.currentStep == 6 {
+if livenessDetector.livenessSuccess == true {
   print("Active liveness check completed successfully")
 }
 ```
@@ -52,8 +58,8 @@ Also, you can check wheter these steps are checked or not with the boolen values
 
 
 ## Notes
-- In the frames, if any face is recognized, currentStep will be 1.
-- In the frames, if there are more than one face, currentStep will be 1.
+- In the frames, if any face is recognized, currentStep property will be 1 which means process will be restarted.
+- In the frames, if there are more than one face, currentStep property will be 1 which means process will be restarted.
 - We are working on to develop with more optional usage. For now, you can control all the steps that are given above.
 
 
